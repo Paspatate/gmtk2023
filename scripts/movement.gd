@@ -12,9 +12,9 @@ signal jump
 var direction = 1
 
 func _physics_process(delta):
-	var direction = choose_direction()
+	var direction_vec = choose_direction()
 	
-	velocity.x = direction.x * max_speed
+	velocity.x = direction_vec.x * max_speed
 	velocity.y += gravity * delta
 	
 	move_and_slide()
@@ -37,8 +37,6 @@ func _on_death():
 
 func _on_jump():
 	do_jump()
-
-
 
 func _on_movement_trigger_area_entered(area):
 	if area is JumpTrigger:
