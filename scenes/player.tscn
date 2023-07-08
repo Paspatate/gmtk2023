@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://d38gyk1vgbvvt"]
+
+[ext_resource type="Script" path="res://scipts/movement.gd" id="1_vn7s8"]
+[ext_resource type="Texture2D" uid="uid://c0otxgpb2fyx8" path="res://assets/player_idle_1.png" id="2_uhy0h"]
+[ext_resource type="Texture2D" uid="uid://ch7mkgu6jy3fj" path="res://assets/player_idle_2.png" id="3_osaua"]
+[ext_resource type="Texture2D" uid="uid://uwpfln1pn20w" path="res://assets/player_walk_1.png" id="4_4bwn1"]
+[ext_resource type="Texture2D" uid="uid://b3fuqodnwj3qc" path="res://assets/player_walk_2.png" id="5_sm3de"]
+[ext_resource type="Texture2D" uid="uid://b4w2it3ethftn" path="res://assets/player_walk_3.png" id="6_620ua"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3u3ti"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lu6c3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uhy0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_osaua")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_4bwn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sm3de")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_620ua")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55y7i"]
+size = Vector2(24, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lda45"]
+size = Vector2(78, 76)
+
+[node name="Player" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_3u3ti")
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("1_vn7s8")
+speed = 600
+MAX_SPEED = 600
+
+[node name="PlayerAnimation" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_lu6c3")
+animation = &"walk"
+frame_progress = 0.0822047
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_55y7i")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="MovementTrigger" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovementTrigger"]
+shape = SubResource("RectangleShape2D_lda45")
+debug_color = Color(0.0980392, 0.643137, 0.235294, 0.419608)
