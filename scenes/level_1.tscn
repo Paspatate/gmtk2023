@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dac1aop2k4dc2"]
+[gd_scene load_steps=13 format=3 uid="uid://dac1aop2k4dc2"]
 
 [ext_resource type="Texture2D" uid="uid://c12e288n7r70q" path="res://assets/terrain/tileset.png" id="1_bihi6"]
 [ext_resource type="Texture2D" uid="uid://c3s4d66i1l7i3" path="res://assets/terrain/new_tileset.png" id="2_xdvwk"]
 [ext_resource type="PackedScene" uid="uid://d38gyk1vgbvvt" path="res://scenes/player.tscn" id="3_k1roo"]
 [ext_resource type="PackedScene" uid="uid://b6ods77117i77" path="res://scenes/jump_trigger.tscn" id="4_r84ir"]
 [ext_resource type="PackedScene" uid="uid://c3l7ihbdoqdvp" path="res://scenes/direction_trigger.tscn" id="5_jclr4"]
+[ext_resource type="PackedScene" uid="uid://c7pcsi70xctl7" path="res://scenes/spikes.tscn" id="6_fc0bi"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6ccpj"]
 
@@ -194,7 +195,7 @@ physics_layer_0/physics_material = SubResource("PhysicsMaterial_6ccpj")
 sources/0 = SubResource("TileSetAtlasSource_chb87")
 sources/1 = SubResource("TileSetAtlasSource_ndnd2")
 
-[node name="Level1" type="Node2D"]
+[node name="Level1" type="Node"]
 
 [node name="TileMap" type="TileMap" parent="."]
 light_mask = 1023
@@ -238,11 +239,11 @@ process_callback = 0
 [node name="JumpTrigger" parent="Triggers" instance=ExtResource("4_r84ir")]
 position = Vector2(652, 484)
 
+[node name="JumpTrigger2" parent="Triggers" instance=ExtResource("4_r84ir")]
+position = Vector2(891, 433)
+
 [node name="JumpTrigger6" parent="Triggers" instance=ExtResource("4_r84ir")]
 position = Vector2(1819, 910)
-
-[node name="JumpTrigger2" parent="Triggers" instance=ExtResource("4_r84ir")]
-position = Vector2(871, 435)
 
 [node name="JumpTrigger3" parent="Triggers" instance=ExtResource("4_r84ir")]
 position = Vector2(1295, 915)
@@ -262,3 +263,8 @@ position = Vector2(1051, 889)
 
 [node name="JumpTrigger4" parent="Triggers" instance=ExtResource("4_r84ir")]
 position = Vector2(1661, 1012)
+
+[node name="Playable" type="Node2D" parent="."]
+
+[node name="Spikes" parent="Playable" instance=ExtResource("6_fc0bi")]
+position = Vector2(888, 408)

@@ -14,8 +14,10 @@ var move_vector : Vector2
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	gfx = $\"Spike GFX\"
-	var move_lenght = gfx.texture.get_height()
+	var move_lenght = gfx.texture.get_height() * scale.y
 	move_vector = Vector2(0, move_lenght)
+	is_up = false
+	translate(move_vector)
 
 func move():
 	if is_up:
@@ -39,7 +41,8 @@ func _process(delta):
 size = Vector2(16, 16)
 
 [node name="Spikes" type="Node2D"]
-position = Vector2(8, 22)
+position = Vector2(24, 24)
+scale = Vector2(3, 3)
 script = SubResource("GDScript_l3tqk")
 is_selected = true
 
@@ -52,10 +55,3 @@ texture = ExtResource("1_l2q8q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
 shape = SubResource("RectangleShape2D_bxcrp")
-
-[node name="PlayerTrigger" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerTrigger"]
-position = Vector2(-16, 0)
-shape = SubResource("RectangleShape2D_bxcrp")
-debug_color = Color(0.901961, 0, 0.760784, 0.419608)
