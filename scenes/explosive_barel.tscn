@@ -1,10 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://cw6cdx7akbp58"]
+[gd_scene load_steps=8 format=3 uid="uid://cw6cdx7akbp58"]
 
 [ext_resource type="Script" path="res://scenes/explosive_barel.gd" id="1_l4naj"]
 [ext_resource type="Texture2D" uid="uid://b8jgdfmrvfaj3" path="res://assets/terrain/barel.png" id="1_oscxb"]
+[ext_resource type="Texture2D" uid="uid://c6amaeb8ur0lj" path="res://assets/smoke.png" id="3_dhrem"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0agxb"]
 radius = 149.084
+
+[sub_resource type="Curve" id="Curve_mr2v6"]
+max_value = 100.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 100), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_sb5s8"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.0397351, 0.172185, 0.695364, 1)
+colors = PackedColorArray(0.9, 0.60075, 0.387, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="Curve" id="Curve_hdyxh"]
+min_value = -1.0
+_data = [Vector2(0.0549451, -0.890909), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="ExplosiveBarel" type="Area2D"]
 script = ExtResource("1_l4naj")
@@ -16,5 +32,32 @@ shape = SubResource("CircleShape2D_0agxb")
 texture_filter = 1
 scale = Vector2(3, 3)
 texture = ExtResource("1_oscxb")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+texture_filter = 1
+emitting = false
+amount = 100
+lifetime = 0.3
+one_shot = true
+explosiveness = 0.84
+lifetime_randomness = 0.74
+texture = ExtResource("3_dhrem")
+emission_shape = 2
+emission_sphere_radius = 22.46
+spread = 180.0
+gravity = Vector2(0, 200)
+initial_velocity_min = 434.35
+initial_velocity_max = 878.8
+angular_velocity_min = -247.27
+angular_velocity_max = 378.18
+damping_min = 20.2
+damping_max = 52.52
+damping_curve = SubResource("Curve_mr2v6")
+angle_min = -334.5
+angle_max = 261.8
+scale_amount_min = 0.0
+scale_amount_max = 3.0
+color_ramp = SubResource("Gradient_sb5s8")
+hue_variation_curve = SubResource("Curve_hdyxh")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

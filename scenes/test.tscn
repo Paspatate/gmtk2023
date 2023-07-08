@@ -11,7 +11,6 @@
 
 [node name="Controllable" parent="." instance=ExtResource("2_rx5ex")]
 position = Vector2(412, 234)
-scale = Vector2(3, 3)
 
 [node name="Player" parent="." instance=ExtResource("3_1u41d")]
 position = Vector2(561, 252)
