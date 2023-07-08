@@ -39,8 +39,6 @@ func _physics_process(delta):
 	if is_jumping:
 		velocity.y = -jump_strength
 	
-	
-
 	move_and_slide()
 	
 

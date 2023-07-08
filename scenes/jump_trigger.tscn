@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6ods77117i77"]
+
+[ext_resource type="Script" path="res://scripts/jump_trigger.gd" id="1_xotjv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h45wp"]
+size = Vector2(16, 16)
+
+[node name="JumpTrigger" type="Area2D"]
+script = ExtResource("1_xotjv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_h45wp")
+debug_color = Color(0.815686, 0, 0.972549, 0.419608)

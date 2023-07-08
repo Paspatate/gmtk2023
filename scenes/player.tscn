@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d38gyk1vgbvvt"]
+[gd_scene load_steps=10 format=3 uid="uid://d38gyk1vgbvvt"]
 
 [ext_resource type="Script" path="res://scripts/movement.gd" id="1_7828x"]
 [ext_resource type="Texture2D" uid="uid://bl02nq3bm7sjb" path="res://assets/player_idle_1.png" id="2_uhy0h"]
@@ -6,8 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://c8tvoi4guc6qr" path="res://assets/player_walk_1.png" id="4_4bwn1"]
 [ext_resource type="Texture2D" uid="uid://cwku56p4opevp" path="res://assets/player_walk_2.png" id="5_sm3de"]
 [ext_resource type="Texture2D" uid="uid://fm8dv4cfqhn0" path="res://assets/player_walk_3.png" id="6_620ua"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3u3ti"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lu6c3"]
 animations = [{
@@ -38,15 +36,12 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55y7i"]
-size = Vector2(24, 48)
+size = Vector2(22, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lda45"]
-size = Vector2(78, 76)
+size = Vector2(40, 48)
 
-[node name="Player" type="RigidBody2D"]
-physics_material_override = SubResource("PhysicsMaterial_3u3ti")
-gravity_scale = 0.0
-lock_rotation = true
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_7828x")
 
 [node name="PlayerAnimation" type="AnimatedSprite2D" parent="."]
@@ -54,19 +49,18 @@ texture_filter = 1
 texture_repeat = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_lu6c3")
-animation = &"walk"
-frame_progress = 0.0822047
+animation = &"idle"
+frame_progress = 0.21186
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_55y7i")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="MovementTrigger" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MovementTrigger"]
 shape = SubResource("RectangleShape2D_lda45")
 debug_color = Color(0.0980392, 0.643137, 0.235294, 0.419608)
 
-[connection signal="death" from="." to="." method="_on_death"]
+[connection signal="jump" from="." to="." method="_on_jump"]
+[connection signal="area_entered" from="MovementTrigger" to="." method="_on_movement_trigger_area_entered"]

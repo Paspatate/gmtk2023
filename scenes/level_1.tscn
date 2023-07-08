@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dac1aop2k4dc2"]
+[gd_scene load_steps=5 format=3 uid="uid://dl5tmvjoq3b5c"]
 
 [ext_resource type="Texture2D" uid="uid://c12e288n7r70q" path="res://assets/terrain/tileset.png" id="1_bihi6"]
-[ext_resource type="PackedScene" uid="uid://bjtmrr6bi57xv" path="res://scenes/light_flower.tscn" id="2_ywwrr"]
+[ext_resource type="PackedScene" uid="uid://bffg1j10tmvhj" path="res://scenes/light_flower.tscn" id="2_ywwrr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_chb87"]
 texture = ExtResource("1_bihi6")

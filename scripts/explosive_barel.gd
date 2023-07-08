@@ -1,6 +1,6 @@
 extends Area2D
 
-var active = true
+var active = false
 var _is_exploaded = false
 
 
@@ -9,7 +9,7 @@ func _ready():
 	$ExplosionRadius.disabled = true
 
 
-func _process(delta):
+func _process(_delta):
 	if not active:
 		return 
 	if Input.is_action_just_pressed("interact") and not _is_exploaded:
