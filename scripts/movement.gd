@@ -4,12 +4,16 @@ class_name Player
 signal death
 signal jump
 
-@export var max_speed = 350
+@export var max_speed = 270
 @export var acceleration : float = 70
 @export var jump_strength : float = 630
 @export var gravity = 2500;
 
 var direction = 1
+
+
+func _ready():
+	$PlayerAnimation.play("walk")
 
 func _physics_process(delta):
 	var direction_vec = choose_direction()

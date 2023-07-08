@@ -21,7 +21,7 @@ position = Vector2(106, 158)
 position = Vector2(348, 287)
 
 [node name="JumpTrigger" parent="." instance=ExtResource("5_pao8h")]
-position = Vector2(675, 360)
+position = Vector2(720, 385)
 
 [node name="DirectionTrigger" parent="." instance=ExtResource("6_qi78k")]
 position = Vector2(889, 319)

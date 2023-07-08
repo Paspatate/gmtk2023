@@ -1,7 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dac1aop2k4dc2"]
+[gd_scene load_steps=11 format=3 uid="uid://dac1aop2k4dc2"]
 
 [ext_resource type="Texture2D" uid="uid://c12e288n7r70q" path="res://assets/terrain/tileset.png" id="1_bihi6"]
 [ext_resource type="PackedScene" uid="uid://bjtmrr6bi57xv" path="res://scenes/light_flower.tscn" id="2_ywwrr"]
+[ext_resource type="PackedScene" uid="uid://d38gyk1vgbvvt" path="res://scenes/player.tscn" id="3_k1roo"]
+[ext_resource type="PackedScene" uid="uid://b6ods77117i77" path="res://scenes/jump_trigger.tscn" id="4_r84ir"]
+[ext_resource type="PackedScene" uid="uid://c3l7ihbdoqdvp" path="res://scenes/direction_trigger.tscn" id="5_jclr4"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6ccpj"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_egxce"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -12,41 +17,99 @@ polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_chb87"]
 texture = ExtResource("1_bihi6")
 0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
 1:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_egxce")
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:0/0 = 0
 2:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_egxce")
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:0/0 = 0
 4:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_gvt2y")
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:1/0 = 0
 0:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_egxce")
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:1/0 = 0
 1:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_egxce")
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:1/0 = 0
 2:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_egxce")
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:1/0 = 0
+4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:1/0/physics_layer_0/angular_velocity = 0.0
 0:2/0 = 0
 0:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_egxce")
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:2/0 = 0
 1:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_egxce")
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:2/0 = 0
 2:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_egxce")
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:5/0 = 0
+1:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:5/0/physics_layer_0/angular_velocity = 0.0
 2:5/0 = 0
+2:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:5/0/physics_layer_0/angular_velocity = 0.0
 3:5/0 = 0
+3:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:5/0/physics_layer_0/angular_velocity = 0.0
 1:6/0 = 0
+1:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:6/0/physics_layer_0/angular_velocity = 0.0
 2:6/0 = 0
+2:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:6/0/physics_layer_0/angular_velocity = 0.0
 3:6/0 = 0
+3:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:6/0/physics_layer_0/angular_velocity = 0.0
 1:7/0 = 0
+1:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:7/0/physics_layer_0/angular_velocity = 0.0
 2:7/0 = 0
+2:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:7/0/physics_layer_0/angular_velocity = 0.0
 3:7/0 = 0
+3:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:7/0/physics_layer_0/angular_velocity = 0.0
 1:8/0 = 0
+1:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:8/0/physics_layer_0/angular_velocity = 0.0
 2:8/0 = 0
+2:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:8/0/physics_layer_0/angular_velocity = 0.0
 3:8/0 = 0
+3:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:8/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_hyqgh"]
 occlusion_layer_0/light_mask = 1
 occlusion_layer_0/sdf_collision = true
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_6ccpj")
 sources/0 = SubResource("TileSetAtlasSource_chb87")
 
 [node name="Level1" type="Node2D"]
@@ -107,3 +170,38 @@ position = Vector2(1710, 741)
 [node name="Flower6" parent="CanvasModulate/Flowers" instance=ExtResource("2_ywwrr")]
 z_index = 2
 position = Vector2(1110, 357)
+
+[node name="Player" parent="." instance=ExtResource("3_k1roo")]
+position = Vector2(137, 224)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+process_callback = 0
+
+[node name="Triggers" type="Node2D" parent="."]
+
+[node name="JumpTrigger" parent="Triggers" instance=ExtResource("4_r84ir")]
+position = Vector2(652, 484)
+
+[node name="JumpTrigger6" parent="Triggers" instance=ExtResource("4_r84ir")]
+position = Vector2(1821, 908)
+
+[node name="JumpTrigger2" parent="Triggers" instance=ExtResource("4_r84ir")]
+position = Vector2(871, 435)
+
+[node name="JumpTrigger3" parent="Triggers" instance=ExtResource("4_r84ir")]
+position = Vector2(1295, 915)
+
+[node name="DirectionTrigger" parent="Triggers" instance=ExtResource("5_jclr4")]
+position = Vector2(1249, 643)
+
+[node name="JumpTrigger5" parent="Triggers" instance=ExtResource("4_r84ir")]
+position = Vector2(1766, 959)
+
+[node name="DirectionTrigger2" parent="Triggers" instance=ExtResource("5_jclr4")]
+position = Vector2(1005, 695)
+
+[node name="DirectionTrigger3" parent="Triggers" instance=ExtResource("5_jclr4")]
+position = Vector2(1051, 889)
+
+[node name="JumpTrigger4" parent="Triggers" instance=ExtResource("4_r84ir")]
+position = Vector2(1661, 1012)
