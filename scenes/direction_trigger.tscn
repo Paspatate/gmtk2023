@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3l7ihbdoqdvp"]
+
+[ext_resource type="Script" path="res://scripts/direction_trigger.gd" id="1_dh6wv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4n13h"]
+size = Vector2(16, 16)
+
+[node name="DirectionTrigger" type="Area2D"]
+script = ExtResource("1_dh6wv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4n13h")
+debug_color = Color(0.27451, 0.631373, 0, 0.419608)
