@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://d38gyk1vgbvvt"]
 
-[ext_resource type="Script" path="res://scripts/movement.gd" id="1_7828x"]
-[ext_resource type="Texture2D" uid="uid://bl02nq3bm7sjb" path="res://assets/player_idle_1.png" id="2_uhy0h"]
-[ext_resource type="Texture2D" uid="uid://b7dcq54i2813d" path="res://assets/player_idle_2.png" id="3_osaua"]
-[ext_resource type="Texture2D" uid="uid://c8tvoi4guc6qr" path="res://assets/player_walk_1.png" id="4_4bwn1"]
-[ext_resource type="Texture2D" uid="uid://cwku56p4opevp" path="res://assets/player_walk_2.png" id="5_sm3de"]
-[ext_resource type="Texture2D" uid="uid://fm8dv4cfqhn0" path="res://assets/player_walk_3.png" id="6_620ua"]
+[ext_resource type="Script" path="res://scipts/movement.gd" id="1_vn7s8"]
+[ext_resource type="Texture2D" uid="uid://c0otxgpb2fyx8" path="res://assets/player_idle_1.png" id="2_uhy0h"]
+[ext_resource type="Texture2D" uid="uid://ch7mkgu6jy3fj" path="res://assets/player_idle_2.png" id="3_osaua"]
+[ext_resource type="Texture2D" uid="uid://uwpfln1pn20w" path="res://assets/player_walk_1.png" id="4_4bwn1"]
+[ext_resource type="Texture2D" uid="uid://b3fuqodnwj3qc" path="res://assets/player_walk_2.png" id="5_sm3de"]
+[ext_resource type="Texture2D" uid="uid://b4w2it3ethftn" path="res://assets/player_walk_3.png" id="6_620ua"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3u3ti"]
 
@@ -47,7 +47,7 @@ size = Vector2(78, 76)
 physics_material_override = SubResource("PhysicsMaterial_3u3ti")
 gravity_scale = 0.0
 lock_rotation = true
-script = ExtResource("1_7828x")
+script = ExtResource("1_vn7s8")
 
 [node name="PlayerAnimation" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -68,5 +68,3 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MovementTrigger"]
 shape = SubResource("RectangleShape2D_lda45")
 debug_color = Color(0.0980392, 0.643137, 0.235294, 0.419608)
-
-[connection signal="death" from="." to="." method="_on_death"]

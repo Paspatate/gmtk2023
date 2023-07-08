@@ -1,14 +1,46 @@
 [gd_scene load_steps=4 format=3 uid="uid://c7pcsi70xctl7"]
 
-[ext_resource type="Script" path="res://scipts/spikes.gd" id="1_cxebt"]
 [ext_resource type="Texture2D" uid="uid://bu2ngxthdupix" path="res://assets/terrain/spike.png" id="1_l2q8q"]
+
+[sub_resource type="GDScript" id="GDScript_l3tqk"]
+script/source = "extends Node2D
+
+@export var is_selected : bool = false
+var is_up = false
+var gfx : Sprite2D
+var move_vector : Vector2
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	gfx = $\"Spike GFX\"
+	var move_lenght = gfx.texture.get_height()
+	move_vector = Vector2(0, move_lenght)
+
+func move():
+	if is_up:
+		is_up = false
+		translate(move_vector)
+	else:
+		is_up = true
+		translate(-move_vector)
+
+func check_movement():
+	if Input.is_action_just_pressed(\"ui_accept\"):
+		move()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if is_selected:
+		check_movement()
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bxcrp"]
 size = Vector2(16, 16)
 
 [node name="Spikes" type="Node2D"]
 position = Vector2(8, 22)
-script = ExtResource("1_cxebt")
+script = SubResource("GDScript_l3tqk")
 is_selected = true
 
 [node name="Spike GFX" type="Sprite2D" parent="."]
