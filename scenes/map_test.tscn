@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://dyjnt2ri8wrqv"]
 
-[ext_resource type="Texture2D" uid="uid://c12e288n7r70q" path="res://assets/terrain/tileset.png" id="1_l5mu5"]
+[ext_resource type="Texture2D" uid="uid://c12e288n7r70q" path="res://assets/terrain/tileset.png" id="1_8xka3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g711h"]
 friction = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_57x1i"]
-texture = ExtResource("1_l5mu5")
+texture = ExtResource("1_8xka3")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0

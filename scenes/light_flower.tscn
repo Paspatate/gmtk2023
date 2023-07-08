@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjtmrr6bi57xv"]
+
+[ext_resource type="Texture2D" uid="uid://4wxl4qlnq0yt" path="res://assets/light_flower.png" id="1_o4sj1"]
+[ext_resource type="Texture2D" uid="uid://c2bytm7blbsa8" path="res://assets/light.png" id="2_tceso"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("1_o4sj1")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture_filter = 1
+color = Color(1, 0.937255, 1, 1)
+energy = 3.0
+texture = ExtResource("2_tceso")
+texture_scale = 3.0
