@@ -10,7 +10,7 @@ signal disable
 #var _pid = Pid2D.new(100.0, 2, 2.5)
 @export var sprite : Texture2D
 
-var _disabled = false
+var active = true
 
 func _ready():
 	if not sprite == null:
@@ -19,7 +19,7 @@ func _ready():
 
 
 func _physics_process(delta):
-	if _disabled:
+	if not active:
 		return
 		
 	var direction : Vector2 = Vector2(
@@ -46,4 +46,4 @@ func _physics_process(delta):
 
 
 func _on_disable():
-	_disabled = true
+	active = false

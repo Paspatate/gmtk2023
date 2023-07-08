@@ -1,12 +1,9 @@
 extends Node2D
+class_name Player
 
-@export int : speed = 3
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+signal death
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+
+func _on_death():
+	print("PLAYER DEAD")
