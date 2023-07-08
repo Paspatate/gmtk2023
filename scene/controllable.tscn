@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8ouhiskmagpw"]
+
+[ext_resource type="Texture2D" uid="uid://cuswkycjw85wu" path="res://assets/terrain/crate.png" id="1_5aqds"]
+[ext_resource type="Script" path="res://script/Controlable.gd" id="1_6nd8w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2heti"]
+size = Vector2(16, 16)
+
+[node name="Controllable" type="CharacterBody2D"]
+slide_on_ceiling = false
+script = ExtResource("1_6nd8w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_5aqds")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2heti")
+
+[connection signal="disable" from="." to="." method="_on_disable"]
