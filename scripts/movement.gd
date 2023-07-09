@@ -13,6 +13,7 @@ enum TrigType {
 @export var acceleration : float = 70
 @export var jump_strength : float = 630
 @export var gravity = 2500;
+@export var health : int = 3
 
 var direction = 1
 var action_queue: Array[TrigType] = []
@@ -58,8 +59,14 @@ func _on_jump():
 func _on_movement_trigger_area_entered(area):
 	if area is JumpTrigger:
 		action_queue.append(TrigType.JUMP)
-		print("added player jump to queue")
 	elif area is DirectionTrigger:
 		action_queue.append(TrigType.DIRECTION)
-		print("added direction revese to queue")
 		
+func damage(count : int):
+	health = max(0, health - count)
+	
+	if health <= 0:
+		death.emit()
+
+func _on_spikes_damaged():
+	damage(1)

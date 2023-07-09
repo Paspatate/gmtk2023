@@ -2,7 +2,7 @@ extends Node2D
 
 signal loose
 var _children : Array[Node]
-var _children_max_index : int
+var _children_max_index : int = -1
 var _selected_index : int = 0
 var _cursor_scene = preload("res://scenes/cursor_arrow.tscn")
 var _cursor
@@ -21,20 +21,21 @@ func _ready():
 		_children.append(_i)
 		_children_max_index += 1
 	_create_cursor()
+	_children[_selected_index].set_active()
 	
 		
 func _next_child():
 	if _selected_index >= _children_max_index:
 		loose.emit()
-		return
-	
-	_children[_selected_index].is_selected = false
-	_selected_index += 1
-	_children[_selected_index].is_selected = true
-	_place_cursor()
+	else:
+		_children[_selected_index].set_inactive()
+		_selected_index += 1
+		_children[_selected_index].set_active()
+		_place_cursor()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	print(_selected_index, _children_max_index )
 	_place_cursor()
 	#print(_selected_index)
 

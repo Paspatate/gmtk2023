@@ -51,10 +51,10 @@ anchor_left = 0.23
 anchor_top = 0.5
 anchor_right = 0.23
 anchor_bottom = 0.5
-offset_left = 101.32
-offset_top = -8.5
-offset_right = 192.32
-offset_bottom = 15.5
+offset_left = 112.17
+offset_top = -7.5
+offset_right = 203.17
+offset_bottom = 16.5
 theme_override_font_sizes/font_size = 16
 text = "link to website"
 uri = "https://managore.itch.io/m6x11"
@@ -91,16 +91,16 @@ uri = "https://godotengine.org/"
 [node name="VBoxContainer3" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Art" type="Label" parent="CenterContainer/VBoxContainer/VBoxContainer3"]
+[node name="GameArt" type="Label" parent="CenterContainer/VBoxContainer/VBoxContainer3"]
 layout_mode = 2
 theme = ExtResource("2_laq81")
-text = "Art"
+text = "Game & Art"
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/VBoxContainer3"]
 layout_mode = 2
 theme = ExtResource("2_laq81")
 theme_override_font_sizes/font_size = 16
-text = "art by PasPatate and SaderSponge"
+text = "PasPatate and SaderSponge"
 
 [node name="Back" type="Button" parent="CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(60, 0)

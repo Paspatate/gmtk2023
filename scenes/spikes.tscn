@@ -1,11 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7pcsi70xctl7"]
+[gd_scene load_steps=5 format=3 uid="uid://c7pcsi70xctl7"]
 
 [ext_resource type="Texture2D" uid="uid://bu2ngxthdupix" path="res://assets/terrain/spike.png" id="1_l2q8q"]
+[ext_resource type="PackedScene" uid="uid://b6ods77117i77" path="res://scenes/jump_trigger.tscn" id="2_0vlee"]
 
 [sub_resource type="GDScript" id="GDScript_l3tqk"]
 script/source = "extends Node2D
 
-@export var is_selected : bool = false
+signal damaged
+
+@export var active : bool = false
 var is_up = false
 var gfx : Sprite2D
 var move_vector : Vector2
@@ -34,8 +37,20 @@ func check_movement():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if is_selected:
+	if active:
 		check_movement()
+
+func set_active():
+	active = true
+	
+func set_inactive():
+	active = false
+
+
+func _on_jump_trigger_body_entered(body):
+	if body.get_name() == \"Player\":
+		damaged.emit()
+
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bxcrp"]
@@ -44,7 +59,6 @@ size = Vector2(16, 16)
 [node name="Spikes" type="Node2D"]
 scale = Vector2(3, 3)
 script = SubResource("GDScript_l3tqk")
-is_selected = true
 
 [node name="GFX" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -55,3 +69,9 @@ texture = ExtResource("1_l2q8q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
 shape = SubResource("RectangleShape2D_bxcrp")
+
+[node name="JumpTrigger" parent="." instance=ExtResource("2_0vlee")]
+position = Vector2(-10, 3.33333)
+scale = Vector2(2, 1)
+
+[connection signal="body_entered" from="JumpTrigger" to="." method="_on_jump_trigger_body_entered"]
