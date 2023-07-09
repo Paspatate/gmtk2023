@@ -13,9 +13,13 @@ func _ready():
 
 func _on_area_entered(area):
 	if area.name == "MovementTrigger":
-		var menu_next_lvl = next_level.instantiate()
-		get_parent().add_child(menu_next_lvl)
-		get_tree().paused = true
+		if next_level_name != "":
+			var menu_next_lvl = next_level.instantiate()
+			get_parent().add_child(menu_next_lvl)
+			get_tree().paused = true
+		else :
+			get_tree().change_scene_to_file("res://scenes/menu/end_game.tscn")
+			
 		
 
 
