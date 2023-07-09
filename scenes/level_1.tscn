@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://bf82k1px72ayp"]
 
 [ext_resource type="Texture2D" uid="uid://c12e288n7r70q" path="res://assets/terrain/tileset.png" id="1_bihi6"]
-[ext_resource type="Texture2D" uid="uid://c3s4d66i1l7i3" path="res://assets/terrain/new_tileset.png" id="2_xdvwk"]
+[ext_resource type="PackedScene" uid="uid://bjtmrr6bi57xv" path="res://scenes/light_flower.tscn" id="2_ywwrr"]
 [ext_resource type="PackedScene" uid="uid://d38gyk1vgbvvt" path="res://scenes/player.tscn" id="3_k1roo"]
 [ext_resource type="PackedScene" uid="uid://b6ods77117i77" path="res://scenes/jump_trigger.tscn" id="4_r84ir"]
 [ext_resource type="Script" path="res://scripts/prop_selection.gd" id="6_3wggb"]
@@ -106,87 +106,6 @@ texture = ExtResource("1_bihi6")
 3:8/0 = 0
 3:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:8/0/physics_layer_0/angular_velocity = 0.0
-3:2/0 = 0
-3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:2/0/physics_layer_0/angular_velocity = 0.0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ndnd2"]
-texture = ExtResource("2_xdvwk")
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-1:0/0 = 0
-1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:0/0/physics_layer_0/angular_velocity = 0.0
-2:0/0 = 0
-2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:0/0/physics_layer_0/angular_velocity = 0.0
-4:0/0 = 0
-4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:0/0/physics_layer_0/angular_velocity = 0.0
-0:1/0 = 0
-0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:1/0/physics_layer_0/angular_velocity = 0.0
-1:1/0 = 0
-1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:1/0/physics_layer_0/angular_velocity = 0.0
-2:1/0 = 0
-2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:1/0/physics_layer_0/angular_velocity = 0.0
-3:1/0 = 0
-3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:1/0/physics_layer_0/angular_velocity = 0.0
-4:1/0 = 0
-4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:1/0/physics_layer_0/angular_velocity = 0.0
-0:2/0 = 0
-0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:2/0/physics_layer_0/angular_velocity = 0.0
-1:2/0 = 0
-1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:2/0/physics_layer_0/angular_velocity = 0.0
-2:2/0 = 0
-2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:2/0/physics_layer_0/angular_velocity = 0.0
-3:2/0 = 0
-3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:2/0/physics_layer_0/angular_velocity = 0.0
-1:5/0 = 0
-1:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:5/0/physics_layer_0/angular_velocity = 0.0
-2:5/0 = 0
-2:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:5/0/physics_layer_0/angular_velocity = 0.0
-3:5/0 = 0
-3:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:5/0/physics_layer_0/angular_velocity = 0.0
-1:6/0 = 0
-1:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:6/0/physics_layer_0/angular_velocity = 0.0
-2:6/0 = 0
-2:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:6/0/physics_layer_0/angular_velocity = 0.0
-3:6/0 = 0
-3:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:6/0/physics_layer_0/angular_velocity = 0.0
-1:7/0 = 0
-1:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:7/0/physics_layer_0/angular_velocity = 0.0
-2:7/0 = 0
-2:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:7/0/physics_layer_0/angular_velocity = 0.0
-3:7/0 = 0
-3:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:7/0/physics_layer_0/angular_velocity = 0.0
-1:8/0 = 0
-1:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:8/0/physics_layer_0/angular_velocity = 0.0
-2:8/0 = 0
-2:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:8/0/physics_layer_0/angular_velocity = 0.0
-3:8/0 = 0
-3:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:8/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_hyqgh"]
 occlusion_layer_0/light_mask = 1
@@ -194,9 +113,8 @@ occlusion_layer_0/sdf_collision = true
 physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_6ccpj")
 sources/0 = SubResource("TileSetAtlasSource_chb87")
-sources/1 = SubResource("TileSetAtlasSource_ndnd2")
 
-[node name="Level1" type="Node"]
+[node name="Level1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 light_mask = 1023
@@ -224,10 +142,36 @@ layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array()
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 light_mask = 2
 visibility_layer = 2
-color = Color(0.14902, 0.184314, 0.231373, 1)
+color = Color(0.282353, 0.34902, 0.439216, 1)
+
+[node name="Flowers" type="Node2D" parent="CanvasModulate"]
+z_index = 1
+
+[node name="Flower" parent="CanvasModulate/Flowers" instance=ExtResource("2_ywwrr")]
+z_index = 2
+position = Vector2(319, 163)
+
+[node name="Flower2" parent="CanvasModulate/Flowers" instance=ExtResource("2_ywwrr")]
+z_index = 2
+position = Vector2(319, 163)
+
+[node name="Flower3" parent="CanvasModulate/Flowers" instance=ExtResource("2_ywwrr")]
+z_index = 2
+position = Vector2(319, 163)
+
+[node name="Flower4" parent="CanvasModulate/Flowers" instance=ExtResource("2_ywwrr")]
+z_index = 2
+position = Vector2(1851, 354)
+
+[node name="Flower5" parent="CanvasModulate/Flowers" instance=ExtResource("2_ywwrr")]
+z_index = 2
+position = Vector2(1710, 741)
+
+[node name="Flower6" parent="CanvasModulate/Flowers" instance=ExtResource("2_ywwrr")]
+z_index = 2
+position = Vector2(1110, 357)
 
 [node name="Player" parent="." instance=ExtResource("3_k1roo")]
 position = Vector2(359, 264)
