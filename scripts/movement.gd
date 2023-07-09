@@ -42,7 +42,6 @@ func do_jump():
 	if is_on_floor():
 		velocity.y = -jump_strength
 
-
 func choose_direction() -> Vector2:
 	return Vector2.RIGHT * direction
 
@@ -52,7 +51,6 @@ func reverse_direction():
 
 func _on_death():
 	print("PLAYER DEAD")
-
 
 func _on_jump():
 	do_jump()

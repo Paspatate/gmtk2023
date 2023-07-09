@@ -13,8 +13,9 @@ var move_vector : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	gfx = $\"Spike GFX\"
+	gfx = $\"GFX\"
 	var move_lenght = gfx.texture.get_height() * scale.y
+	
 	move_vector = Vector2(0, move_lenght)
 	is_up = false
 	translate(move_vector)
@@ -41,12 +42,11 @@ func _process(delta):
 size = Vector2(16, 16)
 
 [node name="Spikes" type="Node2D"]
-position = Vector2(24, 24)
 scale = Vector2(3, 3)
 script = SubResource("GDScript_l3tqk")
 is_selected = true
 
-[node name="Spike GFX" type="Sprite2D" parent="."]
+[node name="GFX" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 2
 texture = ExtResource("1_l2q8q")
