@@ -26,6 +26,3 @@ func _on_body_entered(body):
 
 func set_active():
 	active = true
-	
-func set_inactive():
-	active = false
