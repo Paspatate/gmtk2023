@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddjj3i077fohd"]
+[gd_scene load_steps=8 format=3 uid="uid://ddjj3i077fohd"]
 
 [ext_resource type="PackedScene" uid="uid://dd0ces5g6q4k1" path="res://scenes/map_test.tscn" id="1_o71gm"]
 [ext_resource type="PackedScene" uid="uid://cprxxqqm6d6gp" path="res://scenes/controllable.tscn" id="2_rx5ex"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cw6cdx7akbp58" path="res://scenes/explosive_barel.tscn" id="4_t2vj5"]
 [ext_resource type="PackedScene" uid="uid://b6ods77117i77" path="res://scenes/jump_trigger.tscn" id="5_pao8h"]
 [ext_resource type="PackedScene" uid="uid://c3l7ihbdoqdvp" path="res://scenes/direction_trigger.tscn" id="6_qi78k"]
+[ext_resource type="PackedScene" uid="uid://be36wmacbvsor" path="res://scenes/end_lvl_flag.tscn" id="7_tjglo"]
 
 [node name="Root" type="Node"]
 
@@ -31,3 +32,7 @@ position = Vector2(376, 360)
 
 [node name="Controllable2" parent="." instance=ExtResource("2_rx5ex")]
 position = Vector2(178, 205)
+
+[node name="Flag" parent="." instance=ExtResource("7_tjglo")]
+position = Vector2(609, 383)
+next_level_name = "res://scenes/level_1.tscn"

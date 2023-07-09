@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=3 uid="uid://be36wmacbvsor"]
+
+[ext_resource type="Script" path="res://scripts/end_lvl_flag.gd" id="1_e3gty"]
+[ext_resource type="Texture2D" uid="uid://s5jyb66ym6ng" path="res://assets/flag000.png" id="1_g6xbu"]
+[ext_resource type="Texture2D" uid="uid://dggu2738qt4m0" path="res://assets/flag001.png" id="2_yn4f5"]
+[ext_resource type="Texture2D" uid="uid://clwaehvm64652" path="res://assets/flag002.png" id="3_1iu8k"]
+[ext_resource type="Texture2D" uid="uid://c275cjhu3iety" path="res://assets/flag003.png" id="4_20wt4"]
+[ext_resource type="Texture2D" uid="uid://d1tqivt6wcl73" path="res://assets/flag004.png" id="5_81pv5"]
+[ext_resource type="Texture2D" uid="uid://plx1f5uedj1u" path="res://assets/flag005.png" id="6_uyvl5"]
+[ext_resource type="Texture2D" uid="uid://dl3kk1fnxciso" path="res://assets/flag pole.png" id="7_j38dw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vyy2j"]
+size = Vector2(40, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8hkdj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g6xbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yn4f5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1iu8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_20wt4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_81pv5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uyvl5")
+}],
+"loop": true,
+"name": &"wind",
+"speed": 6.0
+}]
+
+[node name="Flag" type="Area2D"]
+script = ExtResource("1_e3gty")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -48)
+shape = SubResource("RectangleShape2D_vyy2j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -72)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_8hkdj")
+animation = &"wind"
+frame_progress = 0.865376
+
+[node name="FlagPole" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -24)
+scale = Vector2(3, 3)
+texture = ExtResource("7_j38dw")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="load_next_level" from="." to="." method="_on_load_next_level"]

@@ -70,4 +70,4 @@ func _on_movement_trigger_area_entered(area):
 	elif area is DirectionTrigger:
 		action_queue.append(TrigType.DIRECTION)
 		print("added direction revese to queue ")
-		
+	
