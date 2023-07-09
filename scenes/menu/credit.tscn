@@ -1,0 +1,112 @@
+[gd_scene load_steps=3 format=3 uid="uid://2c103hiix66g"]
+
+[ext_resource type="Script" path="res://scripts/credit.gd" id="1_c4vxy"]
+[ext_resource type="Theme" uid="uid://dgyg1rfgpqkxo" path="res://menu_theme.tres" id="2_laq81"]
+
+[node name="Credit" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c4vxy")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Credit" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_laq81")
+theme_override_font_sizes/font_size = 64
+text = "Credit"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Font" type="Label" parent="CenterContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_laq81")
+text = "Font"
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_laq81")
+theme_override_font_sizes/font_size = 16
+text = "m6x11 by Daniel Linssen
+"
+
+[node name="LinkButton" type="LinkButton" parent="CenterContainer/VBoxContainer/VBoxContainer/Label"]
+layout_mode = 2
+anchor_left = 0.23
+anchor_top = 0.5
+anchor_right = 0.23
+anchor_bottom = 0.5
+offset_left = 101.32
+offset_top = -8.5
+offset_right = 192.32
+offset_bottom = 15.5
+theme_override_font_sizes/font_size = 16
+text = "link to website"
+uri = "https://managore.itch.io/m6x11"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Engine" type="Label" parent="CenterContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("2_laq81")
+text = "Engine"
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("2_laq81")
+theme_override_font_sizes/font_size = 16
+text = "Godot 4.0"
+
+[node name="LinkButton" type="LinkButton" parent="CenterContainer/VBoxContainer/VBoxContainer2/Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.366
+anchor_top = 0.5
+anchor_right = 0.366
+anchor_bottom = 0.5
+offset_left = -18.056
+offset_top = -8.5
+offset_right = 94.944
+offset_bottom = 31.5
+theme_override_font_sizes/font_size = 16
+text = "link to website"
+uri = "https://godotengine.org/"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Art" type="Label" parent="CenterContainer/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("2_laq81")
+text = "Art"
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("2_laq81")
+theme_override_font_sizes/font_size = 16
+text = "art by PasPatate and SaderSponge"
+
+[node name="Back" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme = ExtResource("2_laq81")
+theme_override_font_sizes/font_size = 16
+text = "Back"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

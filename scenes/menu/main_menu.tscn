@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2qh150fx0fok"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_iq7us"]
+[ext_resource type="Theme" uid="uid://dgyg1rfgpqkxo" path="res://menu_theme.tres" id="2_mjj5p"]
+[ext_resource type="FontFile" uid="uid://l0cu5qqccavr" path="res://assets/m6x11.ttf" id="2_s4268"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hhhb5"]
+font = ExtResource("2_s4268")
+font_size = 64
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iq7us")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -48.0
+offset_right = 60.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/separation = 23
+
+[node name="GameName" type="Label" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+text = "LE NOM DU JEU"
+label_settings = SubResource("LabelSettings_hhhb5")
+horizontal_alignment = 1
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_mjj5p")
+text = "Play"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_mjj5p")
+text = "Quit "
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="credit" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("2_mjj5p")
+theme_override_font_sizes/font_size = 16
+text = "Credit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/credit" to="." method="_on_credit_pressed"]
