@@ -35,9 +35,7 @@ func _next_child():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(_selected_index, _children_max_index )
 	_place_cursor()
-	#print(_selected_index)
 
 
 func _on_dogged_trigger_dogged():
