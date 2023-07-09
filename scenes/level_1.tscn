@@ -453,24 +453,12 @@ position = Vector2(3018, 625)
 scale = Vector2(3, 20)
 
 [node name="DoggedTrigger5" parent="Triggers" instance=ExtResource("8_m0xj4")]
-position = Vector2(3422, 694)
-scale = Vector2(3, 3)
-
-[node name="DoggedTrigger7" parent="Triggers" instance=ExtResource("8_m0xj4")]
-position = Vector2(4677, 594)
-scale = Vector2(3, 3)
-
-[node name="DoggedTrigger8" parent="Triggers" instance=ExtResource("8_m0xj4")]
-position = Vector2(5054, 547)
-scale = Vector2(3, 3)
-
-[node name="DoggedTrigger9" parent="Triggers" instance=ExtResource("8_m0xj4")]
-position = Vector2(5644, 786)
-scale = Vector2(3, 3)
+position = Vector2(3443, 535)
+scale = Vector2(3, 20)
 
 [node name="DoggedTrigger10" parent="Triggers" instance=ExtResource("8_m0xj4")]
-position = Vector2(6264, 791)
-scale = Vector2(3, 3)
+position = Vector2(6352, 629)
+scale = Vector2(3, 20)
 
 [node name="DoggedTrigger11" parent="Triggers" instance=ExtResource("8_m0xj4")]
 position = Vector2(7375, 692)
@@ -485,8 +473,12 @@ position = Vector2(8288, 767)
 scale = Vector2(3, 5)
 
 [node name="DoggedTrigger14" parent="Triggers" instance=ExtResource("8_m0xj4")]
-position = Vector2(9903, 1151)
-scale = Vector2(3, 5)
+position = Vector2(9913, 1011)
+scale = Vector2(3, 20)
+
+[node name="DoggedTrigger17" parent="Triggers" instance=ExtResource("8_m0xj4")]
+position = Vector2(10940, 958)
+scale = Vector2(3, 20)
 
 [node name="DoggedTrigger15" parent="Triggers" instance=ExtResource("8_m0xj4")]
 position = Vector2(10627, 1053)
@@ -497,7 +489,19 @@ position = Vector2(11184, 1103)
 scale = Vector2(5, 5)
 
 [node name="DoggedTrigger6" parent="Triggers" instance=ExtResource("8_m0xj4")]
-position = Vector2(4255, 590)
+position = Vector2(4276, 586)
+scale = Vector2(3, 10)
+
+[node name="DoggedTrigger7" parent="Triggers" instance=ExtResource("8_m0xj4")]
+position = Vector2(4683, 530)
+scale = Vector2(3, 10)
+
+[node name="DoggedTrigger8" parent="Triggers" instance=ExtResource("8_m0xj4")]
+position = Vector2(5070, 486)
+scale = Vector2(3, 10)
+
+[node name="DoggedTrigger9" parent="Triggers" instance=ExtResource("8_m0xj4")]
+position = Vector2(5679, 713)
 scale = Vector2(3, 10)
 
 [node name="Playable" type="Node2D" parent="."]
@@ -557,21 +561,25 @@ position = Vector2(11061, 1080)
 [node name="Flag" parent="." instance=ExtResource("9_oucmc")]
 position = Vector2(11837, 1009)
 
+[connection signal="death" from="Player" to="Flag" method="_on_player_death"]
 [connection signal="dogged" from="Triggers/DoggedTrigger" to="Playable" method="_on_dogged_trigger_dogged"]
 [connection signal="dogged" from="Triggers/DoggedTrigger2" to="Playable" method="_on_dogged_trigger_dogged"]
 [connection signal="dogged" from="Triggers/DoggedTrigger3" to="Playable" method="_on_dogged_trigger_dogged"]
 [connection signal="dogged" from="Triggers/DoggedTrigger4" to="Playable" method="_on_dogged_trigger_dogged"]
 [connection signal="dogged" from="Triggers/DoggedTrigger5" to="Playable" method="_on_dogged_trigger_dogged"]
-[connection signal="dogged" from="Triggers/DoggedTrigger7" to="Playable" method="_on_dogged_trigger_dogged"]
-[connection signal="dogged" from="Triggers/DoggedTrigger8" to="Playable" method="_on_dogged_trigger_dogged"]
-[connection signal="dogged" from="Triggers/DoggedTrigger9" to="Playable" method="_on_dogged_trigger_dogged"]
 [connection signal="dogged" from="Triggers/DoggedTrigger10" to="Playable" method="_on_dogged_trigger_dogged"]
 [connection signal="dogged" from="Triggers/DoggedTrigger11" to="Playable" method="_on_dogged_trigger_dogged"]
 [connection signal="dogged" from="Triggers/DoggedTrigger13" to="Playable" method="_on_dogged_trigger_dogged"]
 [connection signal="dogged" from="Triggers/DoggedTrigger12" to="Playable" method="_on_dogged_trigger_dogged"]
 [connection signal="dogged" from="Triggers/DoggedTrigger14" to="Playable" method="_on_dogged_trigger_dogged"]
+[connection signal="dogged" from="Triggers/DoggedTrigger17" to="Playable" method="_on_dogged_trigger_dogged"]
 [connection signal="dogged" from="Triggers/DoggedTrigger15" to="Playable" method="_on_dogged_trigger_dogged"]
 [connection signal="dogged" from="Triggers/DoggedTrigger16" to="Playable" method="_on_dogged_trigger_dogged"]
 [connection signal="dogged" from="Triggers/DoggedTrigger6" to="Playable" method="_on_dogged_trigger_dogged"]
+[connection signal="dogged" from="Triggers/DoggedTrigger7" to="Playable" method="_on_dogged_trigger_dogged"]
+[connection signal="dogged" from="Triggers/DoggedTrigger8" to="Playable" method="_on_dogged_trigger_dogged"]
+[connection signal="dogged" from="Triggers/DoggedTrigger9" to="Playable" method="_on_dogged_trigger_dogged"]
 [connection signal="damaged" from="Playable/Spikes" to="Player" method="_on_spikes_damaged"]
 [connection signal="damaged" from="Playable/Spikes2" to="Player" method="_on_spikes_damaged"]
+[connection signal="damaged" from="Playable/Spikes3" to="Player" method="_on_spikes_3_damaged"]
+[connection signal="damage" from="Playable/ExplosiveBarel2" to="Player" method="_on_explosive_barel_2_damage"]

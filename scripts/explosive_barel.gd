@@ -1,5 +1,6 @@
 extends Area2D
 
+signal damage
 var active = false
 var _is_exploaded = false
 
@@ -23,9 +24,8 @@ func _process(_delta):
 
 
 func _on_body_entered(body):
-	print(body.name + " entered the radius")
-	if body is Player:
-		body.death.emit()
+	if body.get_name() == "Player":
+		body.damage(1)
 	
 
 func set_active():

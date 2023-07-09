@@ -9,6 +9,7 @@ enum TrigType {
 	JUMP
 }
 
+@export var health = 5
 @export var max_speed = 270
 @export var acceleration : float = 70
 @export var jump_strength : float = 700
@@ -45,14 +46,12 @@ func _physics_process(delta):
 func do_jump():
 	if is_on_floor():
 		velocity.y = -jump_strength
-		print("jumped")
 
 
 func choose_direction() -> Vector2:
 	return Vector2.RIGHT * direction
 
 func reverse_direction():
-	print("reverse dir")
 	direction = -direction
 	$PlayerAnimation.flip_h = not $PlayerAnimation.flip_h
 
@@ -66,8 +65,11 @@ func _on_jump():
 func _on_movement_trigger_area_entered(area):
 	if area is JumpTrigger:
 		action_queue.append(TrigType.JUMP)
-		print("added player jump to queue ")
 	elif area is DirectionTrigger:
 		action_queue.append(TrigType.DIRECTION)
-		print("added direction revese to queue ")
 	
+func damage(count: int):
+	health = max(0, health - count)
+	if health <= 0:
+		death.emit()
+

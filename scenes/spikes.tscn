@@ -47,9 +47,9 @@ func set_inactive():
 	active = false
 
 
-func _on_jump_trigger_body_entered(body):
+func _on_collision_body_entered(body):
 	if body.get_name() == \"Player\":
-		damaged.emit()
+		body.damage(1)
 
 "
 
@@ -74,4 +74,5 @@ shape = SubResource("RectangleShape2D_bxcrp")
 position = Vector2(-10, 3.33333)
 scale = Vector2(2, 1)
 
+[connection signal="body_entered" from="Collision" to="." method="_on_collision_body_entered"]
 [connection signal="body_entered" from="JumpTrigger" to="." method="_on_jump_trigger_body_entered"]

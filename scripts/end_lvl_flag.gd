@@ -18,11 +18,13 @@ func _on_area_entered(area):
 			get_parent().add_child(menu_next_lvl)
 			get_tree().paused = true
 		else :
-			get_tree().change_scene_to_file("res://scenes/menu/end_game.tscn")
+			get_tree().change_scene_to_file("res://scenes/menu/gameover.tscn")
 			
-		
-
 
 func _on_load_next_level():
 	get_tree().change_scene_to_file(next_level_name)
 	get_tree().paused = false
+
+
+func _on_player_death():
+	get_tree().change_scene_to_file("res://scenes/menu/end_game.tscn")
