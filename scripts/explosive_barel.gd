@@ -12,10 +12,14 @@ func _ready():
 func _process(_delta):
 	if not active:
 		return 
-	if Input.is_action_just_pressed("interact") and not _is_exploaded:
+	
+	
+	if Input.is_action_just_pressed("ui_accept") and not _is_exploaded:
 		$ExplosionRadius.disabled = false
 		$CPUParticles2D.restart()
 		_is_exploaded = true
+		self.visible = false
+		set_inactive()
 
 
 func _on_body_entered(body):
@@ -26,3 +30,6 @@ func _on_body_entered(body):
 
 func set_active():
 	active = true
+
+func set_inactive():
+	active = false
